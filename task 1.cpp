@@ -72,7 +72,7 @@ double getSide(std::string report) {
     double side = 0;
     std::cin >> side;
     if (std::cin.fail()) {
-        std::cout<<"Error\n"<<std::endl;
+        std::cout<<"Error. You must insert only numbers."<<std::endl;
         exit(1);
     }
     return side;
