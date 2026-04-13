@@ -13,7 +13,7 @@ const double EPS = numeric_limits<double>::epsilon() * 1e7;
 
 Hexagon::Hexagon(): side(0) {}
 
-Hexagon::Hexagon(Point v1, Point v2, Point v3, Point v4, Point v5, Point v6)
+Hexagon::Hexagon(const Point v1, const Point v2, const Point v3, const Point v4, const Point v5, const Point v6)
     : p1(v1), p2(v2), p3(v3), p4(v4), p5(v5), p6(v6) {
     side = hypot(p2.getX() - p1.getX(), p2.getY() - p1.getY());
 
@@ -36,9 +36,9 @@ Hexagon::Hexagon(Point v1, Point v2, Point v3, Point v4, Point v5, Point v6)
     }
 }
 
-Hexagon::Hexagon(double x1, double y1, double x2, double y2,
-    double x3, double y3, double x4, double y4,
-    double x5, double y5, double x6, double y6)
+Hexagon::Hexagon(const double x1, const double y1, const double x2, const double y2,
+    const double x3, const double y3, const double x4, const double y4,
+    const double x5, const double y5, const double x6, const double y6)
     : Hexagon(Point(x1, y1), Point(x2, y2),
         Point(x3, y3), Point(x4, y4),
         Point(x5, y5), Point(x6, y6)) {}
