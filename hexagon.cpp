@@ -11,6 +11,8 @@ using namespace std;
 
 const double EPS = numeric_limits<double>::epsilon() * 1e7;
 
+Hexagon::Hexagon(): side(0) {}
+
 Hexagon::Hexagon(Point v1, Point v2, Point v3, Point v4, Point v5, Point v6)
     : p1(v1), p2(v2), p3(v3), p4(v4), p5(v5), p6(v6) {
     side = hypot(p2.getX() - p1.getX(), p2.getY() - p1.getY());
