@@ -25,7 +25,7 @@ private:
      * @param v5 пятая точка
      * @param v6 шестая точка
      */
-    Hexagon(Point v1, Point v2, Point v3, Point v4, Point v5, Point v6);
+    Hexagon(const Point v1, const Point v2, const Point v3, const Point v4, const Point v5, const Point v6);
 
     /**
      * @brief Конструктор для построения правильного шестиугольника через координаты
@@ -42,9 +42,9 @@ private:
      * @param x6 абсцисса шестой точки
      * @param y6 ордината шестой точки
      */
-    Hexagon(double x1, double y1, double x2, double y2,
-            double x3, double y3, double x4, double y4,
-            double x5, double y5, double x6, double y6);
+    Hexagon(const double x1, const double y1, const double x2, const double y2,
+            const double x3, const double y3, const double x4, const double y4,
+            const double x5, const double y5, const double x6, constdouble y6);
 
     /**
      * @brief Функция рассчёта площади правильного шестиугольника
