@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const double EPS = numeric_limits<double>::epsilon() * 1e7;
+const double Hexagon::EPS = numeric_limits<double>::epsilon() * 1e7;
 
 Hexagon::Hexagon(): side(0) {}
 
