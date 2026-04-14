@@ -8,6 +8,7 @@ class Point {
 private:
     double x;
     double y;
+    static const double EPS;
 public:
     /**
      * @brief Конструктор для класса Point
