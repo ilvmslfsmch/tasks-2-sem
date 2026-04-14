@@ -1,35 +1,49 @@
 #include <iostream>
-#include "RightTriangle.h"
+#include "Hexagon.h"
+#include "Point.h"
+
+using namespace std;
 
 /**
- * @brief Считывает катет треугольника с клавиатуры
- * @param reports - строка информации
- * @return 1 при ошибке ввода; при корректном вводе - считанное значение
- * @note Так как дано, что треугольник прямоугольный, проверять правило треугольника не требуется, остаётся проверить
- * только полученные значения на положительность и на то, что введены числа, а не буквы/иное
+ * @brief BY_POINTS - ввод координат через точки, BY_COORDINATES - через координаты (x1 y1 x2 y2 ...)
  */
-double getSide(const std::string reports = "");
+enum {BY_POINTS = 1, BY_COORDINATES};
 
 /**
  * @brief Точка входа в программу
- * @return 0, если программа выполнена корректно
+ * @return 0, если программа выполнена корректно, иначе 1.
  */
-int main() {
-    double side1 = getSide("Enter first side of right triangle:");
-    double side2 = getSide("Enter last side of right triangle:");
-    RightTriangle newTriangle(side1, side2);
-    std::cout<<"Perimeter of circumscribed round is "<<newTriangle.getLenghtOfRound()<<std::endl;
-    std::cout<<"Square of circumscribed round is "<<newTriangle.getSquareOfRound()<<std::endl;
-    return 0;
-}
+int main () {
+    int choice;
+    cout << "Select input method: by points - " << BY_POINTS << ", by coordinates - " << BY_COORDINATES << "." << endl;
+    cin >> choice;
 
-double getSide(const std::string report) {
-    std::cout << report << std::endl;
-    double side = 0;
-    std::cin >> side;
-    if (std::cin.fail()) {
-        std::cout<<"Error. You must insert only numbers."<<std::endl;
-        exit(1);
+    Hexagon hex;
+
+    switch (choice) {
+        case BY_POINTS: {
+            Point p1, p2, p3, p4, p5, p6;
+            cout << "Enter 6 points (x y x y ...):" << endl;
+            cin >> p1 >> p2 >> p3 >> p4 >> p5 >> p6;
+            hex = Hexagon(p1, p2, p3, p4, p5, p6);
+            break;
+        }
+            case BY_COORDINATES: {
+            double x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6;
+            cout << "Enter 12 coordinates (x1 y1 x2 y2 ...):" << endl;
+            cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3 >> x4 >> y4 >> x5 >> y5 >> x6 >> y6;
+            hex = Hexagon(x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6);
+            break;
+        }
+            default:
+            cout << "Error. Invalid choice." << endl;
+            return 1;
     }
-    return side;
+    cout << hex << endl;
+    cout << "Area: " << hex.getArea() << endl;
+    cout << "Perimeter: " << hex.getPerimeter() << endl;
+    cout << "Radius:" << hex.getRadius() << endl;
+
+    }
+    return 0;
 }
