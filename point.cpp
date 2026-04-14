@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const double EPS = numeric_limits<double>::epsilon() * 1e7;
+const double Point::EPS = numeric_limits<double>::epsilon() * 1e7;
 
 Point::Point(const double x, const double y): x(x), y(y) {}
 
