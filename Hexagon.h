@@ -9,6 +9,7 @@ class Hexagon:public Polygon {
 private:
     Point p1, p2, p3, p4, p5, p6;
     double side;
+    static const double EPS;
     public:
 
     /**
