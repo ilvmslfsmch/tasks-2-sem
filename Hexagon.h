@@ -45,7 +45,7 @@ private:
      */
     Hexagon(const double x1, const double y1, const double x2, const double y2,
             const double x3, const double y3, const double x4, const double y4,
-            const double x5, const double y5, const double x6, constdouble y6);
+            const double x5, const double y5, const double x6, const double y6);
 
     /**
      * @brief Функция рассчёта площади правильного шестиугольника
