@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Array.h"
 
-enum {push = 1, pop, replace};
+enum {push = 1, pop, replace_elem};
 using namespace std;
 
 /**
@@ -12,6 +12,10 @@ int main() {
 	int n = 0;
 	cout << "Choose the range of your array:" << endl;
 	cin >> n;
+	if (n <= 0) {
+		cout << "range must be more than 0;" << endl;
+		return 1;
+	}
 
 	vector v;
 	cout << "Enter " << n << " elements:" << endl;
@@ -22,7 +26,7 @@ int main() {
 	}
 
 	cout << "Current array: " << v << endl;
-	cout << "Choose method: " << push << " - add(push) element, " << pop << " - remove(pop) element, " << replace << " - replace element" << endl;
+	cout << "Choose method: " << push << " - add(push) element, " << pop << " - remove(pop) element, " << replace_elem << " - replace element" << endl;
 	int choice = 0;
 	cin >> choice;
 
@@ -41,7 +45,7 @@ int main() {
 			v.pop(idx);
 			break;
 		}
-		case replace: {
+		case replace_elem: {
 			size_t idx;
 			int val;
 			cout << "Enter index and new value: " << endl;
