@@ -36,6 +36,12 @@ class vector {
 		vector(const vector& other);
 
 		/**
+		* @brief Конструктор перемещения
+		* @param other - другой вектор
+		*/
+		vector(vector&& other);
+
+		/**
 		 * @brief Деструктор
 		 */
 		~vector();
@@ -78,6 +84,13 @@ class vector {
 		 * @return новый скопированный массив
 		 */
 		vector& operator=(const vector& other);
+
+		/**
+		* @brief Оператор присваивания перемещением
+		* @param other - другой вектор
+		* @return указатель на текущий объект
+		*/
+		vector& operator=(vector&& other);
 
 		/**
 		 * @brief Переопределение оператора сравнения(равенство)
