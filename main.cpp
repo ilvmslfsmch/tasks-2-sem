@@ -19,7 +19,7 @@ int main() {
 
 	vector v;
 	cout << "Enter " << n << " elements:" << endl;
-	for (int i = 0; i < n; ++i) {
+	for (size_t i = 0; i < n; ++i) {
 		int val = 0;
 		cin >> val;
 		v.push(v.getSize(), val);
