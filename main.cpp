@@ -46,8 +46,8 @@ int main() {
 			break;
 		}
 		case replace_elem: {
-			size_t idx;
-			int val;
+			size_t idx = 0;
+			int val = 0;
 			cout << "Enter index and new value: " << endl;
 			cin >> idx >> val;
 			v.replace(idx, val);
