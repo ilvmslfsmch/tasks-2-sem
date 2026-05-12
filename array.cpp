@@ -4,7 +4,7 @@
 
 vector::vector(): array(nullptr), size (0) {}
 
-vector::vector(std::initializer_list<int> list) : size(list.size()) {
+vector::vector(const std::initializer_list<int> list) : size(list.size()) {
 	array = new int[size];
 	size_t i = 0;
 	for (int elem : list)
@@ -46,7 +46,7 @@ std::string vector::toString() const {
 	return ss.str();
 }
 
-void vector::push(size_t index, int element) {
+void vector::push(const size_t index, const int element) {
 	if (index > size)
 		index = size;
 	int* newArray = new int[size+1];
@@ -60,7 +60,7 @@ void vector::push(size_t index, int element) {
 	size++;
 }
 
-void vector::pop(size_t index) {
+void vector::pop(const size_t index) {
 	if (index >= size)
 		return;
 	int* newArray = (size > 1) ? new int[size - 1] : nullptr;
@@ -74,16 +74,16 @@ void vector::pop(size_t index) {
 	size--;
 }
 
-void vector::replace(size_t index, int element) {
+void vector::replace(const size_t index, const int element) {
 	if (index < size)
 		array[index] = element;
 }
 
-int& vector::operator[](size_t index) {
+int& vector::operator[](const size_t index) {
 	return array[index];
 }
 
-const int& vector::operator[](size_t index) const {
+const int& vector::operator[](const size_t index) const {
 	return array[index];
 }
 
