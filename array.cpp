@@ -21,6 +21,11 @@ vector::vector(const vector& other) : size(other.size) {
 		array[i] = other.array[i];
 }
 
+vector::vector(vector&& other) : size(other.size), array(other.array) {
+	other.size = 0;
+	other.array = nullptr;
+}
+
 bool vector::isEmpty() const {
 	return size == 0;
 }
@@ -89,6 +94,18 @@ vector& vector::operator=(const vector& other) {
 		array = (size > 0) ? new int[size] : nullptr;
 		for (size_t i = 0; i < size; ++i)
 			array[i] = other.array[i];
+	}
+	return *this;
+}
+
+vector& vector::operator=(vector&& other) {
+	if (this != &other) {
+		delete[] array;
+		size = other.size;
+		array = other.array;
+		
+		other.size = 0;
+		other.array = nullptr;
 	}
 	return *this;
 }
