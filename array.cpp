@@ -112,7 +112,7 @@ std::ostream& operator<<(std::ostream& os, const vector& vec) {
 }
 
 std::istream& operator>>(std::istream& is, vector& vec) {
-	int val;
+	int val = 0;
 	if (is >> val) {
 		vec.push(vec.size, val);
 	}
