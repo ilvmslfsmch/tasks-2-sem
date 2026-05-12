@@ -27,7 +27,7 @@ class vector {
 		 * @brief Конструктор заполнения массива через 'initializer_list'
 		 * @param list элементы массива
 		 */
-		vector(std::initializer_list<int> list);
+		vector(const std::initializer_list<int> list);
 
 		/**
 		 * @brief Конструктор копирования вектора
@@ -57,20 +57,20 @@ class vector {
 		 * @param index номер(индекс) элемента
 		 * @param element сам элемент
 		 */
-		void push(size_t index, int element);
+		void push(const size_t index, const int element);
 
 		/**
 		 * @brief Удаление элемента по индексу с освобождением памяти
 		 * @param index индекс элемента
 		 */
-		void pop(size_t index);
+		void pop(const size_t index);
 
 		/**
 		 * @brief Замена элемента по индексу
 		 * @param index индекс элемента
 		 * @param element новый элемент
 		 */
-		void replace(size_t index, int element);
+		void replace(const size_t index, const int element);
 
 		/**
 		 * @brief Оператор присваивания копирования
@@ -111,7 +111,7 @@ class vector {
 		 * @param index индекс элемента
 		 * @return элемент по индексу
 		 */
-		const int& operator[] (size_t index) const;
+		const int& operator[] (const size_t index) const;
 
 		/**
 		 * @brief Переопределение оператора вывода
