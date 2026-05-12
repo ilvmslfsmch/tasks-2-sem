@@ -9,33 +9,33 @@ using namespace std;
  * @return 0, если программа выполнена корректно, иначе 1
  */
 int main() {
-	size_t n;
+	int n = 0;
 	cout << "Choose the range of your array:" << endl;
 	cin >> n;
 
 	vector v;
 	cout << "Enter " << n << " elements:" << endl;
 	for (int i = 0; i < n; ++i) {
-		int val;
+		int val = 0;
 		cin >> val;
 		v.push(v.getSize(), val);
 	}
 
 	cout << "Current array: " << v << endl;
 	cout << "Choose method: " << push << " - add(push) element, " << pop << " - remove(pop) element, " << replace << " - replace element" << endl;
-	int choice;
+	int choice = 0;
 	cin >> choice;
 
 	switch (choice) {
 		case push: {
-			int idx, val;
+			int idx = 0, val = 0;
 			cout << "Enter index and value to add: " << endl;
 			cin >> idx >> val;
 			v.push(idx, val);
 			break;
 		}
 		case pop: {
-			size_t idx;
+			size_t idx = 0;
 			cout << "Enter index to remove: " << endl;
 			cin >> idx;
 			v.pop(idx);
