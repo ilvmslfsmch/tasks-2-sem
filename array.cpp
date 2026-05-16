@@ -80,10 +80,16 @@ void vector::replace(const size_t index, const int element) {
 }
 
 int& vector::operator[](const size_t index) {
+	if (index >= size) {
+		throw std::out_of_range("No such element in this array.");
+	}
 	return array[index];
 }
 
 const int& vector::operator[](const size_t index) const {
+	if (ondex >= size) {
+		throw std::out_of_range("No such element in this array.");
+	}
 	return array[index];
 }
 
