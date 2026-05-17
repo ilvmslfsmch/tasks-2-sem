@@ -87,7 +87,7 @@ int& vector::operator[](const size_t index) {
 }
 
 const int& vector::operator[](const size_t index) const {
-	if (ondex >= size) {
+	if (index >= size) {
 		throw std::out_of_range("No such element in this array.");
 	}
 	return array[index];
