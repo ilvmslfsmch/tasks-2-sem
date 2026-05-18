@@ -1,6 +1,7 @@
 #include <iostream>
-#include "Array.h"
 #include <sstream>
+#include <stdexcept>
+#include "Array.h"
 
 vector::vector(): array(nullptr), size (0) {}
 
@@ -48,7 +49,7 @@ std::string vector::toString() const {
 
 void vector::push(const size_t index, const int element) {
 	if (index > size)
-		throw std::out_of_range("No such element.")
+		throw std::out_of_range("No such element.");
 	int* newArray = new int[size+1];
 	for (size_t i = 0, j = 0; i < size + 1; ++i) {
 		if (i == index)
