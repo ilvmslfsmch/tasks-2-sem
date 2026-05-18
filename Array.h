@@ -63,7 +63,7 @@ class vector {
 		 * @param index номер(индекс) элемента
 		 * @param element сам элемент
 		 */
-		void push(const size_t index, const int element);
+		void push(size_t index, const int element);
 
 		/**
 		 * @brief Удаление элемента по индексу с освобождением памяти
