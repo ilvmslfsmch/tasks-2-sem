@@ -46,7 +46,7 @@ std::string vector::toString() const {
 	return ss.str();
 }
 
-void vector::push(const size_t index, const int element) {
+void vector::push(size_t index, const int element) {
 	if (index > size)
 		index = size;
 	int* newArray = new int[size+1];
