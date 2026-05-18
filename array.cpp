@@ -46,9 +46,9 @@ std::string vector::toString() const {
 	return ss.str();
 }
 
-void vector::push(size_t index, const int element) {
+void vector::push(const size_t index, const int element) {
 	if (index > size)
-		index = size;
+		throw std::out_of_range("No such element.")
 	int* newArray = new int[size+1];
 	for (size_t i = 0, j = 0; i < size + 1; ++i) {
 		if (i == index)
